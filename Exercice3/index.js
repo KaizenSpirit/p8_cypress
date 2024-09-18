@@ -1,19 +1,20 @@
 function calculateAverage(numbers) {
-  // Vérifier si le tableau est vide ou non défini
   if (!numbers || numbers.length === 0) {
       return 'No numbers to calculate average';
   }
 
-  // Convertir chaque élément en nombre si ce n'est pas déjà le cas
+  for (let i = 0; i < numbers.length; i++) {
+    if (isNaN(Number(numbers[i]))) {
+        return 'All elements must be valid numbers';
+  }
+}
+
   let sum = 0;
   for (let i = 0; i < numbers.length; i++) {
       sum += Number(numbers[i]);
   }
 
-  // Calculer la moyenne
-  const average = sum / numbers.length;
-
-  return average;
+  return sum / numbers.length;
 }
 
 export default calculateAverage;

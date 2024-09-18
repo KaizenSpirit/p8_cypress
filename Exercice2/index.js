@@ -1,9 +1,16 @@
 function calculate(num1, num2, operator) {
-  // Convertir les paramètres en nombres au cas où ils sont passés comme chaînes
+
   num1 = Number(num1);
   num2 = Number(num2);
 
-  // Vérifier l'opérateur et effectuer l'opération correspondante
+  if (isNaN(num1) || isNaN(num2)) {
+    return 'Both arguments must be valid numbers';
+  }
+
+  if (typeof operator !== 'string' || !['+', '-', '*', '/'].includes(operator)) {
+    return 'Invalid operator';
+  }
+
   switch(operator) {
     case '+':
         return num1 + num2;
@@ -21,6 +28,5 @@ function calculate(num1, num2, operator) {
     }
 }
 
-// Export de la fonction pour qu'elle puisse être utilisée dans le fichier de test
 export default calculate;
 

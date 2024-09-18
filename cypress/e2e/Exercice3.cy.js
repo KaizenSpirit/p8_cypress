@@ -17,5 +17,8 @@ describe('Exercice 3 Validation', () => {
     expect(calculateAverage([5, 10, 15])).to.eq(10)
   })
 
+  it('Returns \'All elements must be valid numbers\' when an invalid element is included', ()=>{
+    expect(calculateAverage([5, 'abc', 15])).to.eq('All elements must be valid numbers')
+  })
 
 })
